@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package customer;
+
+
+service Customer {
+
+  rpc GetCustomers (CustomerLookup) returns (CustomersResponse) {}
+}
+
+
+message CustomerLookup {
+  string customerName = 1;
+}
+
+message CustomersResponse {
+  repeated CustomerData customers = 1;
+}
+
+message CustomerData {
+    string name = 1;
+    string lastname = 2;
+}
+
